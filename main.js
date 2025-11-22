@@ -12,6 +12,7 @@ function pickRandomNumber() {
     RandomNumber = Math.floor(Math.random() * 100) + 1; // 1~100까지의 랜덤 숫자 생성
     console.log(RandomNumber)
 }
+pickRandomNumber();
 
 let UserInput = document.getElementById("user-input"); // 유저 숫자 입력 받기
 let PlayButton = document.getElementById("play-button"); // GO! 버튼
