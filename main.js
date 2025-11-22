@@ -8,9 +8,9 @@
 
 
 let RandomNumber = 0;
-function pickRandomNumber(){
-RandomNumber = Math.floor(Math.random() * 100) + 1; // 1~100까지의 랜덤 숫자 생성
-console.log(RandomNumber)
+function pickRandomNumber() {
+    RandomNumber = Math.floor(Math.random() * 100) + 1; // 1~100까지의 랜덤 숫자 생성
+    console.log(RandomNumber)
 }
 
 let UserInput = document.getElementById("user-input"); // 유저 숫자 입력 받기
@@ -36,15 +36,15 @@ function play() {
         return;
     }
 
-    if (history.includes(userValue)){
+    if (history.includes(userValue)) {
         ResultText.textContent = "이미 입력한 숫자입니다."
         return;
     }
-    
+
 
     if (userValue < RandomNumber) {
         ResultText.textContent = "Up!"
-        }
+    }
     else if (userValue > RandomNumber) {
         ResultText.textContent = "Down!"
     }
@@ -53,27 +53,27 @@ function play() {
         ResultText.textContent = "That's Right!"
         PlayButton.disabled = true;
     }
-    
+
     // 기회
-    chances --
+    chances--
     ChancesText.textContent = `남은 기회: ${chances}`
-    if (chances == 0){
+    if (chances == 0) {
         ResultText.textContent = `게임 오버! 정답은 ${RandomNumber}였습니다.`
         PlayButton.disabled = true;
         return;
     }
     console.log(`남은 기회 ${chances}번`)
-    
+
     history.push(userValue)
     console.log(`히스토리 ${history}`)
 
 }
 
 //리셋
-function reset(){
+function reset() {
     pickRandomNumber();
     history = [];
-    ResultText.textContent = "결과 나온다"
+    ResultText.textContent = "1 ~ 100 사이 숫자를 입력하세요"
     chances = 5;
     ChancesText.textContent = `남은 기회: ${chances}`
     PlayButton.disabled = false;
